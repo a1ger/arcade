@@ -1,0 +1,48 @@
+
+<p id="notice"><%= notice %></p>
+
+<%= form_tag(bookings_path, :method => "get") do %>
+  <%= text_field_tag :search, nil, :placeholder => "Search bookings by lastname" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h2>Listing Bookings</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Date</th>
+      <th>Start</th>
+      <th>Hours</th>
+      <th>Players</th>
+      <th>Zone</th>
+      <th>Cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.firstname %></td>
+        <td><%= booking.lastname %></td>
+        <td><%= booking.date %></td>
+        <td><%= booking.start %></td>
+        <td><%= booking.hours %></td>
+        <td><%= booking.players %></td>
+        <td><%= booking.zone %></td>
+        <td><%= booking.cost %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>

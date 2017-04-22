@@ -1,0 +1,62 @@
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+ 
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.number_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.number_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.number_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :players %><br>
+    <%= f.number_field :players %>
+  </div>
+  <div class="field">
+   <%= f.label :zone %><br>
+  <%= f.text_field :zone %>
+  </div>
+  
+      <div class="field">
+       Extra Hour:
+      <%= check_box_tag 'booking[hour]', 'hours' %>
+     </div>
+
+       <div class="field">
+       Extra Person:
+      <%= check_box_tag 'booking[person]', 'person' %>
+      </div>
+
+      <div class="field">
+       Extra Zone:
+      <%= check_box_tag 'booking[zone]', 'zone' %>
+      </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
