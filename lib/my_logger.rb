@@ -15,7 +15,7 @@ class MyLogger
         def logInformation(information)
          @log.puts(information)
           @log.flush
-     end
+        end
 end
 
 #test code 

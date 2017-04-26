@@ -1,5 +1,5 @@
 class BasicBooking
-    def initialize(firstname, lastname,date,start,hours,players,zone)
+    def initialize(firstname, lastname,date,start,hours,players,zone,cost)
         @firstname = firstname
         @lastname= lastname
         @date= date
@@ -7,6 +7,7 @@ class BasicBooking
         @hours= hours
         @players= players
         @zone= zone
+        @cost= cost
         @description = "basic booking"
     end
     
@@ -18,43 +19,14 @@ class BasicBooking
     
     # a method which returns a string representation of the object of type Basicbooking
     def details
-           return " #{@description},  #{@lastname}, #{@date}. #{@start}, #{@hours}, #{@players}, #{@zone}. #{@cost}"
+           return " #{@description}, #{@firstname}, #{@lastname}, #{@date}. #{@start}, #{@hours}, #{@players}, #{@zone}. #{@cost}"
     end
-    
-    # getter methods
-    def firstname
-        return firstname
-    end
-       
-    def lastname
-        return lastname
-    end
-       
-    def date
-          return date
-    end
-      
-    def start
-          return start
-    end
-         
-    def hours
-          return hours
-    end
-     
-    def players
-          return players
-    end
-      
-    def zone
-          return zone
-    end
- 
-end # ends the Basic Booking class
-
-# decorator class -- this serves as the superclass for all the concrete decorators
+end
+   
+   
+    # decorator class -- this serves as the superclass for all the concrete decorators
 # the base/super class decorator (i.e. no actual decoration yet), each concrete decorator (i.e. subclass) will add its own decoration
-class BookingDecorator< BasicBooking
+class BookingDecorator <BasicBooking
     def initialize(basic_booking)
         #basic_booking is a real booking, i.e. the component we want to decorate
         @basic_booking = basic_booking

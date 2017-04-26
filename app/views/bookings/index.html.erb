@@ -34,7 +34,7 @@
         <td><%= booking.hours %></td>
         <td><%= booking.players %></td>
         <td><%= booking.zone %></td>
-        <td><%= booking.cost %></td>
+        <td><%= booking.try(:cost) %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>

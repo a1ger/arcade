@@ -7,8 +7,8 @@ class EmailNotifier < Notifier
   def create(profile)
       puts “Sending email to: ‘#{profile.owner}’ "Thanks for seting up act.”
       # send the email mechanism
-    end
   end
+end
 
   
   class SMSNotifier < Notifier
@@ -18,4 +18,4 @@ class EmailNotifier < Notifier
       # send sms mechanism
     end
   end
-end
+  end
