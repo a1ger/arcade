@@ -8,13 +8,13 @@ class MyLogger
     #this makes the use case private so you cant declate mulple 
      def initialize
       #the constructor below, a means read only.
-     @log = File.open("mylog.txt", "a")
+      @log = File.open("mylog.txt", "a")
      
      end
      #This sends the information to the log file and the flush makes sure that no information is sent twice as it clears out the buffer
-        def logInformation(information)
-         @log.puts(information)
-          @log.flush
+     def logInformation(information)
+      @log.puts(information)
+      @log.flush
      end
 end
 

@@ -93,10 +93,7 @@ class BookingsController < ApplicationController
    #@booking =@profile.booking.build(params.require(:date,:start,:duration,:players,:zone ).permit!)
    #@booking =@profile.booking.build(params.require(:date,:start,:duration,:players,:zone ).permit(:details))
    
-   # retrieve the instance/object of MyLogger class
-   #this should send the information to the logger
-    #logger = MyLogger.instance
-    #logger.logInformation("A new Booking completed: " + @booking.description)
+  
 
 
     respond_to do |format|
@@ -109,7 +106,13 @@ class BookingsController < ApplicationController
       end
     end
   end
-
+   
+   # retrieve the instance/object of MyLogger class
+   #this should send the information to the logger
+    logger = MyLogger.instance
+    logger.logInformation("A new Booking completed")
+    
+    
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   
