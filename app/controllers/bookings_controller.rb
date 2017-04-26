@@ -13,23 +13,14 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.all
-  end
-  
-    #this is for the search fucntion.  
-  #  def index
-   #@bookings = Booking.all
+     #this is for the search fucntion.  
     # #instance variable that contains all the bookings
-    #if params[:search]
+    if params[:search]
       #that search param is linked in html file
-    #@bookings= Booking.search(params[:search])
-     #sort the results by date in ascending order
-     #@bookings= @bookings.booking("date_at ASC")
-      #else
-       ##if there are no params you can use desending order
-     #@booking = @bookings.booking("date_at DESC")
-      # end
+        @bookings= Booking.search(params[:search]).order("lastname ASC")
+    end
      #end
-    #end
+  end
 
 
   # GET /bookings/1

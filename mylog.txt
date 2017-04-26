@@ -112,3 +112,18 @@ This is the first part of information
 This is the second part of information
 A new Booking completed: b
 A new Booking completed
+This is the first part of information
+This is the second part of information
+A new Booking completed
+A new Booking completed
+A new Booking completed
+This is the first part of information
+This is the second part of information
+A new Booking completed
+A new Booking completed
+A new Booking completed
+A new Booking completed
+A new Booking completed
+This is the first part of information
+This is the second part of information
+A new Booking completed
