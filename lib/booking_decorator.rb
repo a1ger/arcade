@@ -1,5 +1,5 @@
 class BasicBooking
-    def initialize(firstname, lastname,date,start,hours,players,zone)
+    def initialize(firstname, lastname,date,start,hours,players,zone, cost)
         @firstname = firstname
         @lastname= lastname
         @date= date
@@ -7,6 +7,7 @@ class BasicBooking
         @hours= hours
         @players= players
         @zone= zone
+        @cost = cost
         @description = "basic booking"
     end
     
@@ -49,6 +50,9 @@ class BasicBooking
     def zone
           return zone
     end
+    def cost
+          return cost
+    end
  
 end # ends the Basic Booking class
 
@@ -58,7 +62,7 @@ class BookingDecorator< BasicBooking
     def initialize(basic_booking)
         #basic_booking is a real booking, i.e. the component we want to decorate
         @basic_booking = basic_booking
-        super(@basic_booking.firstname, @basic_booking.lastname,@basic_booking.start,@basic_booking.hours,@basic_booking.players,@basic_booking.zone )
+        super(@basic_booking.firstname, @basic_booking.lastname,@basic_booking.start,@basic_booking.hours,@basic_booking.players,@basic_booking.zone, @basic_booking.cost )
         @extra_cost = 0
         @description = "Basic Booking with no added extras"
         

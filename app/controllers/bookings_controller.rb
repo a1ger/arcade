@@ -51,7 +51,8 @@ class BookingsController < ApplicationController
   
    
         #added in lines for decorator
-           def create
+  def create
+      
            @booking = Booking.new(booking_params)
            @booking.firstname = params[:booking][:firstname]
            @booking.lastname = params[:booking][:lastname]
@@ -60,6 +61,8 @@ class BookingsController < ApplicationController
            @booking.hours = params[:booking][:hours]
            @booking.players = params[:booking][:players]
            @booking.zone = params[:booking][:zone]
+           @booking.cost = params[:booking][:cost]
+           
 
 
            #error here with code
@@ -187,6 +190,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:firstname, :lastname, :date, :start, :hours, :players, :zone)
+      params.require(:booking).permit(:firstname, :lastname, :date, :start, :hours, :players, :zone, :cost)
     end
 end

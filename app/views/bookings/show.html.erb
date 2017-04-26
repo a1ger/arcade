@@ -35,5 +35,13 @@
   <%= @booking.zone %>
 </p>
 
+<p>
+  <strong>Cost:</strong>
+  <%#= @booking.cost %>
+  <%= number_to_currency(@booking.hours * @booking.players, unit: "£") %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
